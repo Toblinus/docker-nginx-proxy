@@ -1,0 +1,20 @@
+version: "3"
+services:
+  server:
+    build: ./server
+    restart: always
+    environment:
+      PORT: 7080
+  
+  client:
+    build: ./client
+    restart: always
+
+  proxy:
+    build: ./proxy
+    restart: always
+    environment:
+      SERVER_URL: http://server:7080
+      UI_URL: http://client
+    ports:
+      - "80:80"

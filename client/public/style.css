@@ -1,0 +1,22 @@
+.form {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  max-width: 500px;
+  gap:  4px;
+}
+
+.card {
+  margin: auto;
+  border: 1px solid black;
+  min-width: 500px;
+  width: max-content;
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card:not(:last-of-type) {
+  margin-bottom: 12px;
+}

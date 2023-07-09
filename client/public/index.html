@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <h1>Отправить запрос на бэк</h1>
+
+  <div class="sender card">
+    <form class="sender__form form">
+      <label for="path">Путь запроса</label>
+      <input type="text" id="path" value="/user/1">
+      <label for="path">Метод запроса</label>
+      <select id="method">
+        <option value="POST">post</option>
+        <option value="GET">get</option>
+        <option value="PUT">put</option>
+        <option value="DELETE">delete</option>
+      </select>
+    </form>
+
+    <button type="submit" id="sender__submit">Отправить запрос</button>
+  </div>
+
+  <div class="result card">
+    <span>Результат запроса:</span>
+    <span id="result__msg">Пусто</span>
+  </div>
+</body>
+
+</html>
