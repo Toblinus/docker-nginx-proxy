@@ -3,6 +3,7 @@ const app = require('express')();
 const PORT = process.env.PORT || 7300;
 
 app.use((req, res) => {
+  console.log(`${req.method.toUpperCase()} ${req.path}`);
   res.send({
     msg: 'Hello world',
     method: req.method,

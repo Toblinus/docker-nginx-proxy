@@ -3,11 +3,20 @@ server {
     listen  [::]:80;
     server_name  localhost;
 
-    location /api {
-       proxy_pass   ${SERVER_URL};
+    location /api/host {
+      proxy_pass   ${SERVER_URL};
     }
 
+    location /api/remote {
+      proxy_pass   ${REMOTE_SERVER_URL};
+    }
+
+    location /remote {
+      rewrite ^/remote/(.*)$ /$1 break;
+      proxy_pass   ${REMOTE_UI_URL}/;
+    }
+    
     location / {
-       proxy_pass   ${UI_URL};
+      proxy_pass   ${UI_URL};
     }
 }
